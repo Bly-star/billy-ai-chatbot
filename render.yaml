@@ -1,0 +1,19 @@
+services:
+  - type: web
+    runtime: node
+    name: billy-ai-chatbot
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-5.4-mini
+      - key: BOT_NAME
+        value: Billy
+      - key: SYSTEM_PROMPT
+        value: You are Billy, a helpful and thoughtful assistant. Be clear, warm, practical, and honest. When you are uncertain, say so directly instead of guessing.
+      - key: PORT
+        value: 10000
