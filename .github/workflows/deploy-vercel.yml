@@ -22,4 +22,10 @@ jobs:
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
-          npx vercel --prod --token "$VERCEL_TOKEN" --confirm
+          # If a VERCEL_TOKEN is provided, use the CLI to deploy.
+          # Otherwise, rely on the Vercel GitHub App / integration to deploy automatically.
+          if [ -n "$VERCEL_TOKEN" ]; then
+            npx vercel --prod --token "$VERCEL_TOKEN" --confirm
+          else
+            echo "No VERCEL_TOKEN provided — relying on Vercel GitHub Integration to deploy on push."
+          fi
