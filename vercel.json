@@ -1,0 +1,8 @@
+{
+  "functions": {
+    "api/**/*.mjs": {
+      "runtime": "nodejs18.x",
+      "maxDuration": 10
+    }
+  }
+}
