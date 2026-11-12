@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Billy AI Chatbot</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="panel settings-panel">
+        <div class="brand-row">
+          <div class="badge">AI</div>
+          <div>
+            <h1>Billy</h1>
+            <p>Personal assistant</p>
+          </div>
+        </div>
+
+        <div class="status-box">
+          <span class="status-dot"></span>
+          <span id="api-status">Checking connection…</span>
+        </div>
+
+        <label>
+          Bot name
+          <input id="bot-name" type="text" maxlength="60" placeholder="Billy" />
+        </label>
+
+        <label>
+          Model
+          <input id="model-choice" type="text" value="gpt-5.4-mini" maxlength="80" />
+        </label>
+
+        <label>
+          Personality prompt
+          <textarea id="system-prompt" rows="6" placeholder="You are helpful, thoughtful, practical, and honest."></textarea>
+        </label>
+
+        <button id="save-settings" class="primary-btn">Save settings</button>
+      </aside>
+
+      <main class="chat-panel">
+        <header class="chat-header">
+          <div>
+            <p class="eyebrow">Live chat</p>
+            <h2 id="header-name">Billy</h2>
+          </div>
+        </header>
+
+        <section id="chat-log" class="chat-log" aria-live="polite"></section>
+
+        <form id="chat-form" class="composer">
+          <textarea id="message-input" rows="3" placeholder="Send a message to Billy…" required></textarea>
+          <button type="submit" class="primary-btn">Send</button>
+        </form>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node server.mjs"
+    "start": "node server.mjs",
+    "build": "node --check server.mjs && node --check api/chat.mjs && node --check api/health.mjs"
   }
 }
